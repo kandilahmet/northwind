@@ -1,7 +1,12 @@
 <div>Category</div>
 <ul class="list-group">
-  <li (click)="setCurrentCategory(category)" *ngFor="let category of categories" class="list-group-item">
-    {{category.categoryName}}
+  <li
+    (click)="setCurrentCategory(category)" 
+    *ngFor="let category of categories" 
+     [class]="getCurrentCategoryClass(category)"
+     routerLink="products/category/{{category.categoryId}}"
+  >
+    {{ category.categoryName }}
   </li>
 </ul>
-<h5 *ngIf="currentCategory">{{currentCategory.categoryName}}</h5> 
+<h5 *ngIf="currentCategory">{{ currentCategory.categoryName }}</h5>

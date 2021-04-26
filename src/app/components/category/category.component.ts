@@ -9,8 +9,9 @@ import { CategoryService } from 'src/app/services/category.service';
 })
 export class CategoryComponent implements OnInit {
   categories: Category[] = [];
-  currentCategory:Category;
-  constructor(private categoryServices: CategoryService) {}//Injection ile nesnesi dolduruldu. Burada da çağırdık.
+  currentCategory: Category;
+  nullCategory:Category;
+  constructor(private categoryServices: CategoryService) {} //Injection ile nesnesi dolduruldu. Burada da çağırdık.
 
   ngOnInit(): void {
     this.getCategory();
@@ -22,17 +23,27 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  setCurrentCategory(category:Category){
-    this.currentCategory=category;
+  setCurrentCategory(category: Category) {
+    this.currentCategory = category;
   }
- 
-  getCurrentCategoryClass(category:Category){
-    if(this.currentCategory==category){
-      return "list-group-item active";
-    }
-    else{
-      return "list-group-item";
+  setCurrentCategoryToNullObject() {
+    this.currentCategory=this.nullCategory;
+  }
+
+  getCurrentCategoryClass(category: Category) {
+    if (this.currentCategory == category) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
     }
   }
-  
+
+  getAllCategoryClass() {
+    if (!this.currentCategory) {
+      return 'list-group-item active';
+    } else {
+      return 'list-group-item';
+    }
+  }
+
 }

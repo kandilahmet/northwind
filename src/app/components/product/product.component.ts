@@ -18,7 +18,7 @@ export class ProductComponent implements OnInit {
       if(params["categoryId"]){//gelen linkte categoryId name sahip parametre varsa if çalışsın.
         this.getProductsByCategoryId(params["categoryId"]);
       }else{
-        this.getProducts();
+        this.getProducts(); 
       }
     });
     
@@ -35,4 +35,6 @@ getProductsByCategoryId(categoryId:number){
      this.dataLoaded=true;
    });
   } 
+
+  
 }

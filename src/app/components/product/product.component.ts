@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   constructor(private productService:ProductService,private activatedRoute:ActivatedRoute) {}  
   //Angular bizim yerimize ProductService ve ActivatedRoute nesnesi için inject işlemi yapar. 
    dataLoaded:boolean=false;
+   filterText="";
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
       if(params["categoryId"]){//gelen linkte categoryId name sahip parametre varsa if çalışsın.

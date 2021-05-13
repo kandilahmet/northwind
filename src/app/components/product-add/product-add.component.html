@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Ürün Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="productAddForm">
+                    <!-- component da formBuilder ile oluşturulan productAddForm isimli form bu html deki forma map ediliyor  -->
+                    <!-- Bir componentda bir den fazla form olabilir. -->
+                    <div class="mb-3">
+                    <label for="productNameId">Ürün Adı</label>
+                    <div class="form-group">
+                        <input type="text" id="productNameId" formControlName="productName" placeholder="Ürün Adı"
+                            class="form-control" />
+                        <!-- Angular component ile eşleştirirken formControlName'e bakar Id ye değil -->
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productNameId">Birim Fiyat</label>
+                    <div class="form-group">
+                        <input type="number" id="unitPriceId" formControlName="unitPrice" placeholder="Birim Fiyat"
+                            class="form-control" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productNameId">Stok Adeti</label>
+                    <div class="form-group">
+                        <input type="number" id="unitsInStockId" formControlName="unitsInStock" placeholder="Stok Adeti"
+                            class="form-control" />
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productNameId">Kategori Id</label>
+                    <div class="form-group">
+                        <input type="number" id="categoryIdId" formControlName="categoryId" placeholder="Kategori Id"
+                            class="form-control" />
+                    </div> 
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+            </div>
+        </div>
+    </div>
+</div>
